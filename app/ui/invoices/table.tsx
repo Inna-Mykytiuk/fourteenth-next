@@ -5,9 +5,11 @@ import { formatDateToLocal, formatCurrency } from '@/app/lib/utils';
 import { fetchFilteredInvoices } from '@/app/lib/data';
 
 export default async function InvoicesTable({
+  // invoices,
   query,
   currentPage,
 }: {
+  // invoices: InvoiceTable[];
   query: string;
   currentPage: number;
 }) {
