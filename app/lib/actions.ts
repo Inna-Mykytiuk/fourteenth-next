@@ -21,9 +21,12 @@ export async function authenticate(
 ) {
   try {
     await signIn("credentials", Object.fromEntries(formData));
+    // Логін пройшов успішно, можна повернути додаткову інформацію
+    console.log("успішний логін");
+    return { success: true };
   } catch (error) {
     if ((error as Error).message.includes("CredentialsSignin")) {
-      return "CredentialSignin";
+      return { success: false, code: "CredentialSignin" };
     }
     throw error;
   }
